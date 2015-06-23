@@ -9,6 +9,26 @@ package unit8;
  *
  * @author Agustín Erkiletlian Battista
  */
-public class Profesor {
-    
+public class Profesor extends Persona
+{
+    /***
+     * 
+     * Constructor parametrizado
+     * @param nombre nombre de la persona
+     * @param dni dni de la persona
+     */
+    public Profesor(String nombre, String dni) 
+    {
+        super(nombre, dni);
+    }
+
+    /***
+     * Devuelve que es un profesor
+     * @return true
+     */
+    @Override
+    public boolean esProfesor() 
+    {
+        return true;
+    }
 }
