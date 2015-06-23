@@ -50,7 +50,7 @@ public class ControlPersonal
         {
             p.anyadirAsignatura(new Asignatura("programacion", rm.nextDouble()*10));
             p.anyadirAsignatura(new Asignatura("entornos", rm.nextDouble()*10));
-            p.anyadirAsignatura(new Asignatura("sistemas", rm.nextDouble()*10));
+            p.anyadirAsignatura(new Asignatura("bases de datos", rm.nextDouble()*10));
         }
         
         //Muestro el listado de alumnos ordenado por nombre
