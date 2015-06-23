@@ -118,19 +118,19 @@ public class ControlPersonal
         
         personas.clear();
         
-        for (int j = 0; j < dnis.length; j++) 
+        for (int i = 1; i < dnis.length; i++) 
         {
-            for (int i = 0; i < dnis.length - j; i++) 
+            for (int j = dnis.length; i >= j; j--) 
             {
-                if (dnis[i].compareTo(dnis[i+1])>0) 
+                if (dnis[j-1].compareTo(dnis[j])>0) 
                 {
-                    String nombreTemporal = nombres[i];
-                    nombres[i] = nombres[i+1];
-                    nombres[i+1] = nombreTemporal;
+                    String nombreTemporal = nombres[j-1];
+                    nombres[j-1] = nombres[j];
+                    nombres[j] = nombreTemporal;
                     
-                    String dniTemporal = dnis[i];
-                    dnis[i] = dnis[i+1];
-                    dnis[i+1] = dniTemporal;
+                    String dniTemporal = dnis[j-1];
+                    dnis[j-1] = dnis[j];
+                    dnis[j] = dniTemporal;
                 }
             }
         }
@@ -163,19 +163,19 @@ public class ControlPersonal
         
         personas.clear();
         
-        for (int j = 0; j < dnis.length; j++) 
+        for (int i = 1; i < dnis.length; i++) 
         {
-            for (int i = 0; i < dnis.length - j; i++) 
+            for (int j = dnis.length; i >= j; j--) 
             {
-                if (nombres[i].compareTo(nombres[i+1])>0) 
+                if (nombres[j-1].compareTo(nombres[j])>0) 
                 {
-                    String nombreTemporal = nombres[i];
-                    nombres[i] = nombres[i+1];
-                    nombres[i+1] = nombreTemporal;
+                    String nombreTemporal = nombres[j-1];
+                    nombres[j-1] = nombres[j];
+                    nombres[j] = nombreTemporal;
                     
-                    String dniTemporal = dnis[i];
-                    dnis[i] = dnis[i+1];
-                    dnis[i+1] = dniTemporal;
+                    String dniTemporal = dnis[j-1];
+                    dnis[j-1] = dnis[j];
+                    dnis[j] = dniTemporal;
                 }
             }
         }

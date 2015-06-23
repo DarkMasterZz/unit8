@@ -15,7 +15,7 @@ public abstract class Persona
 {
     protected String nombre;
     protected String dni;
-    protected ArrayList<Asignatura> asignaturas;
+    protected static ArrayList<Asignatura> asignaturas;
     
     /***
      * 
@@ -60,17 +60,17 @@ public abstract class Persona
         
         for (int j = 0; j < nombres.length; j++) 
         {
-            for (int i = 0; i < nombres.length - j; i++) 
+            for (int i = 1; i < nombres.length; i++)
             {
-                if (nombres[i].compareTo(nombres[i+1])>0) 
+                if (nombres[j-1].compareTo(nombres[j]) > 0) 
                 {
-                    String nombreTemporal = nombres[i];
-                    nombres[i] = nombres[i+1];
-                    nombres[i+1] = nombreTemporal;
+                    String nombreTemporal = nombres[j-1];
+                    nombres[j-1] = nombres[j];
+                    nombres[j] = nombreTemporal;
                     
-                    double notaTemporal = notas[i];
-                    notas[i] = notas[i+1];
-                    notas[i+1] = notaTemporal;
+                    double notaTemporal = notas[j-1];
+                    notas[j-1] = notas[j];
+                    notas[j] = notaTemporal;
                 }
             }
         }
@@ -99,19 +99,19 @@ public abstract class Persona
         
         asignaturas.clear();
         
-        for (int j = 0; j < nombres.length; j++) 
+        for (int i = 1; i < nombres.length; i++) 
         {
-            for (int i = 0; i < nombres.length - j; i++) 
+            for (int j = nombres.length; i >= j; j--) 
             {
-                if (notas[i] > (notas[i+1])) 
+                if (notas[j-1] > (notas[j])) 
                 {
-                    String nombreTemporal = nombres[i];
-                    nombres[i] = nombres[i+1];
-                    nombres[i+1] = nombreTemporal;
+                    String nombreTemporal = nombres[j-1];
+                    nombres[j-1] = nombres[j];
+                    nombres[j] = nombreTemporal;
                     
-                    double notaTemporal = notas[i];
-                    notas[i] = notas[i+1];
-                    notas[i+1] = notaTemporal;
+                    double notaTemporal = notas[j-1];
+                    notas[j-1] = notas[j];
+                    notas[j] = notaTemporal;
                 }
             }
         }
@@ -148,26 +148,46 @@ public abstract class Persona
     
     public abstract boolean esProfesor();
     
+    /***
+     * 
+     * @param nombre nombre de la persona 
+     */
     public void setNombre(String nombre)
     {
         this.nombre = nombre;
     }
     
+    /***
+     * 
+     * @return nombre de la persona 
+     */
     public String getNombre()
     {
         return nombre;
     }
     
+    /***
+     * 
+     * @param dni dni de la persona 
+     */
     public void setDni(String dni)
     {
         this.dni = dni;
     }
     
+    /***
+     * 
+     * @return dni de la persona
+     */
     public String getDni()
     {
         return dni;
     }
     
+    /***
+     * 
+     * @return ArrayList de las asignaturas de la persona 
+     */
     public ArrayList<Asignatura> getAsignaturas()
     {
         return asignaturas;
