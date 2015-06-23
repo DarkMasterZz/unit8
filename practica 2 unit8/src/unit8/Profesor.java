@@ -11,6 +11,8 @@ package unit8;
  */
 public class Profesor extends Persona
 {
+    private int salario;
+    
     /***
      * 
      * Constructor parametrizado
@@ -30,5 +32,15 @@ public class Profesor extends Persona
     public boolean esProfesor() 
     {
         return true;
+    }
+    
+    public void setSalario(int salario)
+    {
+        this.salario = salario;
+    }
+    
+    public int getSalario()
+    {
+        return salario;
     }
 }
