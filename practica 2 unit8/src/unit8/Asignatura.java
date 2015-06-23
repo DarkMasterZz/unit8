@@ -14,26 +14,49 @@ public class Asignatura
     private String nombre;
     private double nota;
     
-    public Asignatura(String nombre)
+    /***
+     * 
+     * Constructor parametrizado
+     * @param nombre nombre de la asignatura
+     * @param nota nota en la asignatura
+     */
+    public Asignatura(String nombre, double nota)
     {
         this.nombre = nombre;
+        this.nota = nota;
     }
     
+    /***
+     * 
+     * @param nombre nombre de la asignatura
+     */
     public void setNombre(String nombre)
     {
         this.nombre = nombre;
     }
     
+    /***
+     * 
+     * @return nombre de la asignatura
+     */
     public String getNombre()
     {
         return nombre;
     }
     
+    /***
+     * 
+     * @param nota nota de la asignatura
+     */
     public void setNota(double nota)
     {
         this.nota = nota;
     }
     
+    /***
+     * 
+     * @return nota de la asignatura
+     */
     public double getNota()
     {
         return nota;
