@@ -9,6 +9,33 @@ package unit8;
  *
  * @author Agustín Erkiletlian Battista
  */
-public class Asignatura {
+public class Asignatura
+{
+    private String nombre;
+    private double nota;
     
+    public Asignatura(String nombre)
+    {
+        
+    }
+    
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public void setNota(double nota)
+    {
+        this.nota = nota;
+    }
+    
+    public double getNota()
+    {
+        return nota;
+    }
 }
